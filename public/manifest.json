@@ -1,0 +1,16 @@
+{
+  "name": "Beatriz Zonaro - Portfolio",
+  "short_name": "BZ Portfolio",
+  "description": "Junior Full Stack Developer portfolio showcasing projects and skills",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A0F0D",
+  "theme_color": "#1A472A",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beatriz Zonaro - Full Stack Developer</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Beatriz Zonaro (Bezoc) - Junior Full Stack Developer with 6+ years IT experience. Passionate about gaming and problem-solving. Le Wagon bootcamp graduate.">
+  <meta name="keywords" content="Full Stack Developer, Ruby on Rails, Python, JavaScript, TypeScript, Gaming, IT, Web Development">
+  <meta name="author" content="Beatriz Zonaro">
+  
+  <!-- OpenGraph Tags -->
+  <meta property="og:title" content="Beatriz Zonaro - Full Stack Developer">
+  <meta property="og:description" content="Junior Full Stack Developer with 6+ years IT experience. Gaming enthusiast and problem solver.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://beatriz-zonaro.github.io">
+  <meta property="og:image" content="https://beatriz-zonaro.github.io/assets/profile-image.jpg">
+  
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Beatriz Zonaro - Full Stack Developer">
+  <meta name="twitter:description" content="Junior Full Stack Developer with 6+ years IT experience. Gaming enthusiast and problem solver.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  
+  <!-- Google Fonts - Futuristic Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Exo+2:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="/src/styles/main.css">
+  <link rel="stylesheet" href="/src/styles/components.css">
+  <link rel="stylesheet" href="/src/styles/responsive.css">
+</head>
+<body>
+  <!-- Skip to main content for accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <!-- Navigation -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo" aria-label="Home">BZ</a>
+      <ul class="nav-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+      <div class="hero-gradient"></div>
+      <div class="geometric-bg"></div>
+      <div class="hero-content">
+        <div class="hero-image">
+          <img src="https://avatars.githubusercontent.com/u/77759777?s=400&u=5ec112ca73585dbc85dd22464f694f586240b932&v=4?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop" alt="Beatriz Zonaro" loading="lazy">
+        </div>
+        <h1 class="hero-name">Beatriz Zonaro <span class="hero-alias">(Bezoc)</span></h1>
+        <h2 class="hero-title">Junior Full Stack Developer</h2>
+        <p class="hero-tagline">6+ Years IT Experience | Gaming Enthusiast | Problem Solver</p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">View My Work</a>
+          <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+        </div>
+      </div>
+      <div class="scroll-indicator">
+        <div class="scroll-arrow"></div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section serpentine-border">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-grid">
+          <div class="about-content">
+            <p class="about-intro">
+              I'm a passionate Junior Full Stack Developer with over 6 years of experience in IT. 
+              Recently graduated from Le Wagon's intensive Web Development Bootcamp, I bring a unique 
+              blend of technical expertise and gaming industry passion to every project.
+            </p>
+            <p class="about-description">
+              My journey in tech has been driven by curiosity and a love for problem-solving. 
+              Whether I'm debugging code, optimizing performance, or creating user-friendly interfaces, 
+              I approach every challenge with enthusiasm and dedication.
+            </p>
+            <p class="about-gaming">
+              When I'm not coding, you'll find me exploring virtual worlds and analyzing game mechanics. 
+              This gaming background has enhanced my understanding of user experience and interactive design.
+            </p>
+          </div>
+          <div class="tech-stack holographic">
+            <h3>Tech Stack</h3>
+            <div class="tech-category">
+              <h4>Primary Technologies</h4>
+              <div class="tech-badges">
+                <span class="tech-badge primary">Ruby on Rails</span>
+                <span class="tech-badge primary">Python</span>
+                <span class="tech-badge primary">JavaScript</span>
+                <span class="tech-badge primary">TypeScript</span>
+              </div>
+            </div>
+            <div class="tech-category">
+              <h4>Secondary Technologies</h4>
+              <div class="tech-badges">
+                <span class="tech-badge secondary">HTML5</span>
+                <span class="tech-badge secondary">CSS3</span>
+                <span class="tech-badge secondary">SQL</span>
+                <span class="tech-badge secondary">Git</span>
+                <span class="tech-badge secondary">Vite</span>
+                <span class="tech-badge secondary">React</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+      <div class="container">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="project-filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="web-apps">Web Apps</button>
+          <button class="filter-btn" data-filter="games">Games</button>
+          <button class="filter-btn" data-filter="tools">Tools</button>
+        </div>
+        <div class="projects-grid">
+          <article class="project-card holographic" data-category="web-apps">
+            <div class="project-image">
+              <img src="https://as2.ftcdn.net/v2/jpg/12/42/82/17/1000_F_1242821749_uvi33PQmZ8JvejhyMTNuoNeqmzRCnN6C.jpg?auto=compress&cs=tinysrgb&w=400&h=225&fit=crop" alt="Zocarus RPG Landing Page" loading="lazy">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Zocarus RPG</h3>
+              <div class="project-tech">
+                <span class="tech-tag">HTML</span>
+                <span class="tech-tag">CSS</span>
+              </div>
+              <p class="project-description">
+              Landing page for a fantasy RPG game.
+              </p>
+              <div class="project-links">
+                <a href="https://bezoc.github.io/zocarus/" class="project-link" aria-label="View Bigview GPU live demo">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                    <polyline points="15,3 21,3 21,9"/>
+                    <line x1="10" y1="14" x2="21" y2="3"/>
+                  </svg>
+                  Live Demo
+                <a href="https://github.com/bezoc/zocarus" class="project-link" aria-label="View Zocarus RPG source code">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                  </svg>
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card holographic" data-category="web-apps">
+            <div class="project-image">
+              <img src="https://as2.ftcdn.net/v2/jpg/05/55/54/05/1000_F_555540518_2RH3cZtoyqr8W2s7nca7NkkBlcfC6FNs.jpg?auto=compress&cs=tinysrgb&w=400&h=225&fit=crop" alt="Bigview GPU Company" loading="lazy">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Bigview Tech</h3>
+              <div class="project-tech">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Vite</span>
+                <span class="tech-tag">TypeScript</span>
+                <span class="tech-tag">Tailwind CSS</span>
+              </div>
+              <p class="project-description">
+                Landing page for fictional tech company.
+              </p>
+              <div class="project-links">
+                <a href="https://bezoc.github.io/bigview-tech/" class="project-link" aria-label="View Bigview GPU live demo">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                    <polyline points="15,3 21,3 21,9"/>
+                    <line x1="10" y1="14" x2="21" y2="3"/>
+                  </svg>
+                  Live Demo
+                </a>
+                <a href="https://github.com/bezoc/bigview-tech" class="project-link" aria-label="View Bigview GPU source code">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                  </svg>
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card holographic" data-category="web-apps">
+            <div class="project-image">
+              <img src="https://as2.ftcdn.net/v2/jpg/11/53/57/61/1000_F_1153576107_RZpVtSi41pmT8OLKxIdSGg9mhKu6XYIj.jpg?auto=compress&cs=tinysrgb&w=400&h=225&fit=crop" alt="SpaceTraders Marketplace" loading="lazy">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">SpaceTraders Marketplace</h3>
+              <div class="project-tech">
+                <span class="tech-tag">Rails</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">PostgreSQL</span>
+              </div>
+              <p class="project-description">
+                Want to buy the fatest spaceship or the most powerful droid? Come to SpaceTraders!
+              </p>
+              <div class="project-links">
+                <span class="project-link disabled" title="Live demo coming soon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                    <polyline points="15,3 21,3 21,9"/>
+                    <line x1="10" y1="14" x2="21" y2="3"/>
+                  </svg>
+                  Live Demo (Soon)
+                </span>
+                <a href="https://github.com/bezoc/Space_Traders" class="project-link" aria-label="View SpaceTraders source code">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                  </svg>
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card holographic" data-category="tools">
+            <div class="project-image">
+              <img src="https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg?auto=compress&cs=tinysrgb&w=400&h=225&fit=crop" alt="Coding4Newbs Platform" loading="lazy">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Coding 4 Newbs</h3>
+              <div class="project-tech">
+                <span class="tech-tag">Rails</span>
+                <span class="tech-tag">Javascript</span>
+                <span class="tech-tag">PostgreSQL</span>
+              </div>
+              <p class="project-description">
+                Educational platform for Portuguese-speaking developers featuring 
+                interactive coding tutorials and beginner-friendly programming resources.
+              </p>
+              <div class="project-links">
+                <span class="project-link disabled" title="Live demo coming soon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                    <polyline points="15,3 21,3 21,9"/>
+                    <line x1="10" y1="14" x2="21" y2="3"/>
+                  </svg>
+                  Live Demo (Soon)
+                </span>
+                <a href="https://github.com/bezoc/coding-4-newbs" class="project-link" aria-label="View Coding4Newbs source code">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                  </svg>
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section serpentine-border">
+      <div class="container">
+        <h2 class="section-title">Skills & Technologies</h2>
+        <div class="skills-grid">
+          <div class="skills-chart">
+            <canvas id="skillsChart" width="400" height="400"></canvas>
+          </div>
+          <div class="skills-categories">
+            <div class="skill-category holographic">
+              <h3>Frontend</h3>
+              <div class="skill-items">
+                <div class="skill-item">
+                  <span class="skill-name">HTML5</span>
+                  <div class="skill-bar">
+                    <div class="skill-progress" data-level="90"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-name">CSS3</span>
+                  <div class="skill-bar">
+                    <div class="skill-progress" data-level="85"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-name">JavaScript</span>
+                  <div class="skill-bar">
+                    <div class="skill-progress" data-level="80"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-name">TypeScript</span>
+                  <div class="skill-bar">
+                    <div class="skill-progress" data-level="75"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-name">React</span>
+                  <div class="skill-bar">
+                    <div class="skill-progress" data-level="70"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="skill-category holographic">
+              <h3>Backend</h3>
+              <div class="skill-items">
+                <div class="skill-item">
+                  <span class="skill-name">Ruby</span>
+                  <div class="skill-bar">
+                    <div class="skill-progress" data-level="85"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-name">Rails</span>
+                  <div class="skill-bar">
+                    <div class="skill-progress" data-level="80"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-name">Python</span>
+                  <div class="skill-bar">
+                    <div class="skill-progress" data-level="75"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-name">SQL</span>
+                  <div class="skill-bar">
+                    <div class="skill-progress" data-level="70"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="skill-category holographic">
+              <h3>Tools</h3>
+              <div class="skill-items">
+                <div class="skill-item">
+                  <span class="skill-name">Git</span>
+                  <div class="skill-bar">
+                    <div class="skill-progress" data-level="90"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-name">VS Code</span>
+                  <div class="skill-bar">
+                    <div class="skill-progress" data-level="95"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-name">Figma</span>
+                  <div class="skill-bar">
+                    <div class="skill-progress" data-level="60"></div>
+                  </div>
+                <div class="skill-item">
+                  <span class="skill-name">CMD</span>
+                  <div class="skill-bar">
+                    <div class="skill-progress" data-level="95"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h3>Let's Connect</h3>
+            <p>
+              I'm always open to discussing new opportunities, interesting projects, 
+              or just having a chat about technology and gaming. Feel free to reach out!
+            </p>
+            <div class="contact-details">
+              <a href="mailto:beatrizszonaro@gmail.com" class="contact-detail">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+                beatrizszonaro@gmail.com
+              </a>
+            </div>
+            <div class="social-links">
+              <a href="https://github.com/bezoc" class="social-link" aria-label="GitHub profile">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                </svg>
+              </a>
+              <a href="https://linkedin.com/in/beatriz-zonaro" class="social-link" aria-label="LinkedIn profile">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                  <rect x="2" y="9" width="4" height="12"/>
+                  <circle cx="4" cy="4" r="2"/>
+                </svg>
+              </a>
+              <a href="https://steamcommunity.com/profiles/76561198156937556/" class="social-link" aria-label="Steam profile">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2m0 2a8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8 8 8 0 0 0-8-8m-2 3a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <form class="contact-form holographic" id="contactForm">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Beatriz Zonaro. All rights reserved. | Slytherin Pride 🐍</p>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

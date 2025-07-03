@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://beatriz-zonaro.github.io/sitemap.xml
