@@ -20,14 +20,22 @@ document.addEventListener('DOMContentLoaded', function() {
   initGeometricAnimations();
 });
 
-// Custom Cursor with Magical Trail
+// Custom Cursor with Magical Trail - Enhanced for GitHub Pages
 function initCustomCursor() {
-  const cursor = document.createElement('div');
-  cursor.className = 'cursor';
-  document.body.appendChild(cursor);
+  // Check if device supports mouse (not touch-only)
+  const hasMouseSupport = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
   
-  const trails = [];
-  const trailLength = 8;
+  if (!hasMouseSupport) {
+    return; // Skip cursor initialization on touch devices
+  }
+
+  try {
+    const cursor = document.createElement('div');
+    cursor.className = 'cursor';
+    document.body.appendChild(cursor);
+    
+    const trails = [];
+    const trailLength = 8;
   
   // Create trail elements
   for (let i = 0; i < trailLength; i++) {
@@ -39,17 +47,45 @@ function initCustomCursor() {
   }
   
   let mouseX = 0, mouseY = 0;
+  let isMouseMoving = false;
+  
+  // Add class to body to indicate custom cursor is active
+  document.body.classList.add('custom-cursor-active');
   
   document.addEventListener('mousemove', (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
+    isMouseMoving = true;
     
     cursor.style.left = mouseX - 10 + 'px';
     cursor.style.top = mouseY - 10 + 'px';
+    cursor.classList.add('active');
+    
+    // Show trails
+    trails.forEach(trail => trail.element.classList.add('active'));
+  });
+  
+  // Hide cursor when mouse leaves window
+  document.addEventListener('mouseleave', () => {
+    cursor.classList.remove('active');
+    trails.forEach(trail => trail.element.classList.remove('active'));
+    isMouseMoving = false;
+  });
+  
+  document.addEventListener('mouseenter', () => {
+    if (isMouseMoving) {
+      cursor.classList.add('active');
+      trails.forEach(trail => trail.element.classList.add('active'));
+    }
   });
   
   // Animate trail
   function animateTrail() {
+    if (!isMouseMoving) {
+      requestAnimationFrame(animateTrail);
+      return;
+    }
+    
     let currentX = mouseX;
     let currentY = mouseY;
     
@@ -82,9 +118,16 @@ function initCustomCursor() {
   
   // Hide cursor on touch devices
   document.addEventListener('touchstart', () => {
+    document.body.classList.remove('custom-cursor-active');
     cursor.style.display = 'none';
     trails.forEach(trail => trail.element.style.display = 'none');
   });
+  
+} catch (error) {
+  console.log('Custom cursor initialization failed:', error);
+  // Fallback: ensure default cursor is visible
+  document.body.classList.remove('custom-cursor-active');
+}
 }
 
 // Navigation functionality
@@ -539,7 +582,7 @@ function initSkillBars() {
 function initServiceWorker() {
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/sw.js')
+      navigator.serviceWorker.register('./sw.js')
         .then(registration => {
           console.log('SW registered: ', registration);
         })
