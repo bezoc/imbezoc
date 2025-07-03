@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://beatriz-zonaro.github.io/</loc>
+    <loc>https://bezoc.github.io/</loc>
     <lastmod>2025-01-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://beatriz-zonaro.github.io/#about</loc>
+    <loc>https://bezoc.github.io/imbezoc/#about</loc>
     <lastmod>2025-01-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://beatriz-zonaro.github.io/#projects</loc>
+    <loc>https://bezoc.github.io/imbezoc/#projects</loc>
     <lastmod>2025-01-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://beatriz-zonaro.github.io/#skills</loc>
+    <loc>https://bezoc.github.io/imbezoc/#skills</loc>
     <lastmod>2025-01-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://beatriz-zonaro.github.io/#contact</loc>
+    <loc>https://bezoc.github.io/imbezoc/#contact</loc>
     <lastmod>2025-01-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
