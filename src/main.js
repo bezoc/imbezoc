@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
   initGeometricAnimations();
 });
 
-// Custom Cursor with Magical Trail - Enhanced for GitHub Pages
+// Custom Cursor with Magical Trail 
 function initCustomCursor() {
   // Check if device supports mouse (not touch-only)
   const hasMouseSupport = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
@@ -692,7 +692,7 @@ function initGeometricAnimations() {
   
   // Parallax effect for geometric elements
   window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
+    const scrolled = window.scrollY;
     const maxScroll = document.documentElement.scrollHeight - window.innerHeight;  
     const geometricElements = document.querySelectorAll('.geometric-bg');
     
