@@ -93,6 +93,9 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Magical Cursor Trail */
@@ -107,6 +110,7 @@ body::before {
   pointer-events: none;
   z-index: -1;
   opacity: 0.3;
+  position: fixed;
 }
 
 /* Custom Cursor - Only hide default cursor when custom cursor is active */
@@ -278,6 +282,7 @@ a:hover {
   bottom: 0;
   overflow: hidden;
   pointer-events: none;
+  max-height: 100%;
 }
 
 .geometric-bg::before {
@@ -291,6 +296,7 @@ a:hover {
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
   opacity: 0.1;
   animation: float 6s ease-in-out infinite;
+  will-change: transform;
 }
 
 .geometric-bg::after {
@@ -304,6 +310,7 @@ a:hover {
   clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
   opacity: 0.1;
   animation: float 8s ease-in-out infinite reverse;
+  will-change: transform;
 }
 
 @keyframes float {
@@ -643,6 +650,12 @@ a:hover {
 section {
   padding: var(--spacing-xxxl) 0;
   position: relative;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .about-section,

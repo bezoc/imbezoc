@@ -693,11 +693,13 @@ function initGeometricAnimations() {
   // Parallax effect for geometric elements
   window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;  
     const geometricElements = document.querySelectorAll('.geometric-bg');
     
     geometricElements.forEach((element, index) => {
       const speed = 0.5 + (index * 0.1);
-      element.style.transform = `translateY(${scrolled * speed}px)`;
+      const translateY = Math.min(scrolled * speed, maxScroll * speed);           
+      element.style.transform = `translateY(${translateY}px)`;                    
     });
   });
 }

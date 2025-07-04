@@ -707,6 +707,8 @@
   padding: var(--spacing-xl) 0;
   text-align: center;
   position: relative;
+  margin-top: auto;
+  flex-shrink: 0;
 }
 
 .footer::before {
