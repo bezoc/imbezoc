@@ -33,16 +33,6 @@
   padding-left: var(--spacing-lg);
 }
 
-.about-intro::before {
-  content: '"';
-  position: absolute;
-  left: 0;
-  top: -10px;
-  font-size: 3rem;
-  color: var(--color-emerald);
-  opacity: 0.5;
-  font-family: serif;
-}
 
 .tech-stack {
   background: var(--bg-card);
