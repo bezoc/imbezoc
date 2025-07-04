@@ -84,6 +84,8 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  height: 100%;
+  overflow-y: auto;
 }
 
 body {
@@ -92,10 +94,10 @@ body {
   color: var(--color-text);
   line-height: 1.6;
   overflow-x: hidden;
+  overflow-y: auto;
   position: relative;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  height: 100%;
+  position: relative;
 }
 
 /* Magical Cursor Trail */
@@ -551,6 +553,8 @@ a:hover {
   border-radius: 50%;
   z-index: -1;
   animation: rotate 10s linear infinite;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .hero-image::after {
@@ -776,6 +780,8 @@ a:focus {
     animation: none;
   }
 }
+
+
 
 /* Print Styles */
 @media print {

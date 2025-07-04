@@ -529,12 +529,15 @@ function showNotification(message, type = 'info') {
 function initScrollAnimations() {
   const observerOptions = {
     threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+    rootMargin: '0px 0px -50px 0px',
+    root: null
   };
   
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
+        // Prevent multiple triggers
+        observer.unobserve(entry.target);
         entry.target.classList.add('fade-in');
         
         // Add staggered animation for project cards
@@ -690,18 +693,31 @@ function initGeometricAnimations() {
     }
   });
   
+  // Throttle function for performance
+function throttle(func, limit) {
+  let inThrottle;
+  return function() {
+    const args = arguments;
+    const context = this;
+    if (!inThrottle) {
+      func.apply(context, args);
+      inThrottle = true;
+      setTimeout(() => inThrottle = false, limit);
+    }
+  }
+}
+
   // Parallax effect for geometric elements
-  window.addEventListener('scroll', () => {
+  window.addEventListener('scroll', throttle(() => {
     const scrolled = window.scrollY;
-    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;  
     const geometricElements = document.querySelectorAll('.geometric-bg');
     
     geometricElements.forEach((element, index) => {
       const speed = 0.5 + (index * 0.1);
-      const translateY = Math.min(scrolled * speed, maxScroll * speed);           
-      element.style.transform = `translateY(${translateY}px)`;                    
+      const translateY = scrolled * speed * 0.1;
+      element.style.transform = `translateY(${translateY}px)`;
     });
-  });
+  }, 16)); // Throttle to ~60fps
 }
 
 // Smooth scrolling for scroll indicator
