@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://bezoc.github.io/imbezoc/sitemap.xml
+Sitemap: https://imbezoc.netlify.app/sitemap.xml
