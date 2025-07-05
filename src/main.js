@@ -41,7 +41,7 @@ function initCustomCursor() {
   for (let i = 0; i < trailLength; i++) {
     const trail = document.createElement('div');
     trail.className = 'cursor-trail';
-    trail.style.opacity = (trailLength - i) / trailLength * 0.5;
+    trail.style.animationDelay = `${i * 0.1}s`;
     document.body.appendChild(trail);
     trails.push({ element: trail, x: 0, y: 0 });
   }
