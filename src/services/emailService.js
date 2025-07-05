@@ -1,7 +1,7 @@
 class NetlifyFormService {
   async sendEmail(formData) {
     try {
-      // Prepara os dados para Netlify Forms
+      // Prepare data to Netlify Forms
       const formBody = new URLSearchParams();
       formBody.append('form-name', 'contact');
       formBody.append('name', formData.name);

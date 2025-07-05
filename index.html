@@ -423,13 +423,13 @@
             </div>
           </div>
           <form class="contact-form holographic" id="contactForm" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" required>
-              <input type="hidden" name="form-name" value="contact">
+            <input type="hidden" name="form-name" value="contact">
               <p style="display: none;">
                 <label>Don't fill this out if you're human: <input name="bot-field" /></label>
               </p>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required>
             </div>
             <div class="form-group">
               <label for="email">Email</label>
