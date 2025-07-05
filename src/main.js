@@ -1,6 +1,7 @@
 import './styles/main.css';
 import './styles/components.css';
 import './styles/responsive.css';
+import {NetlifyFormService} from './services/emailService.js';
 
 // Chart.js for skills visualization
 import Chart from 'chart.js/auto';
@@ -292,6 +293,8 @@ function initSkillsChart() {
 function initContactForm() {
   const form = document.getElementById('contactForm');
   if (!form) return;
+
+  const emailService = new NetlifyFormService();
   
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -321,19 +324,22 @@ function initContactForm() {
     submitButton.classList.add('loading');
     
     try {
-      // Simulate form submission (replace with actual endpoint)
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      const result = await emailService.sendEmail(data);
       
-      // Show success message
-      showNotification('Message transmitted successfully! 🚀', 'success');
-      form.reset();
-      
-      // Clear all skill bars for reset animation
-      const skillBars = document.querySelectorAll('.skill-progress');
-      skillBars.forEach(bar => bar.style.width = '0%');
+      if (result.success) {
+        showNotification('Message transmitted successfully! 🚀', 'success');
+        form.reset();
+        
+        // Clear all skill bars for reset animation
+        const skillBars = document.querySelectorAll('.skill-progress');
+        skillBars.forEach(bar => bar.style.width = '0%');
+      } else {
+        throw new Error(result.error || 'Erro desconhecido');
+      }
       
     } catch (error) {
-      showNotification('Transmission failed. Please try again. ⚠️', 'error');
+      console.error('Erro ao enviar mensagem:', error);
+      showNotification(`Transmission failed: ${error.message} ⚠️`, 'error');
     } finally {
       submitButton.textContent = originalText;
       submitButton.disabled = false;
