@@ -338,6 +338,8 @@ a:hover {
   overflow: hidden;
   text-transform: uppercase;
   letter-spacing: 1px;
+  min-width: 100px;
+  justify-content: center;
 }
 
 .btn::before {
@@ -502,7 +504,7 @@ a:hover {
 /* Hero Section */
 .hero-section {
   min-height: 100vh;
-  padding-top: 100px;
+  padding-top: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -510,6 +512,7 @@ a:hover {
   position: relative;
   background: radial-gradient(ellipse at center, var(--bg-secondary) 0%, var(--bg-primary) 100%);
   overflow: hidden;
+  flex-direction: column;
 }
 
 .hero-gradient {
@@ -625,16 +628,26 @@ a:hover {
   gap: var(--spacing-lg);
   justify-content: center;
   flex-wrap: wrap;
+  position: relative;
+  margin-bottom: var(--spacing-xl);
+  align-items: center;
 }
 
+
 .scroll-indicator {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
+  position: relative;
+  margin-top: var(--spacing-xxxl);
+  left: 51%;
   transform: translateX(-50%);
+  width: 24px;
+  height: 24px;
   animation: bounce 2s infinite;
   cursor: pointer;
+  z-index: 10;
 }
+
+
+
 
 .scroll-arrow {
   width: 24px;
