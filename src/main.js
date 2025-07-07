@@ -1,7 +1,7 @@
 import './styles/main.css';
 import './styles/components.css';
 import './styles/responsive.css';
-import {NetlifyFormService} from './services/emailService.js';
+import { EmailService, NetlifyFormService, FormValidator } from './services/emailService.js';
 
 // Chart.js for skills visualization
 import Chart from 'chart.js/auto';
@@ -289,34 +289,51 @@ function initSkillsChart() {
   });
 }
 
-// Contact form functionality with enhanced validation
+  // Enhanced contact form functionality with enhanced validation
 function initContactForm() {
   const form = document.getElementById('contactForm');
   if (!form) return;
-
-  const emailService = new NetlifyFormService();
+  
+  // Inicializa o serviço de email
+  const emailService = new EmailService();
+  
+  // Verifica se o formulário Netlify está configurado corretamente
+  if (emailService.provider === 'netlify') {
+    const isValidNetlifyForm = NetlifyFormService.validateNetlifyForm(form);
+    if (!isValidNetlifyForm) {
+      console.warn('Formulário Netlify não está configurado corretamente');
+    }
+  }
   
   form.addEventListener('submit', async (e) => {
-    e.preventDefault();
+    // Para Netlify Forms, não previne o comportamento padrão
+    if (emailService.provider !== 'netlify') {
+      e.preventDefault();
+    }
     
     const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
     
-    // Validate all fields
-    let isValid = true;
-    const inputs = form.querySelectorAll('input, textarea');
-    inputs.forEach(input => {
-      if (!validateField({ target: input })) {
-        isValid = false;
-      }
-    });
+    // Validação usando o FormValidator
+    const validation = FormValidator.validateForm(data);
     
-    if (!isValid) {
-      showNotification('Please fix the errors before submitting.', 'error');
+    if (!validation.isValid) {
+      e.preventDefault(); // Previne envio se houver erros
+      showNotification(`Erros encontrados: ${validation.errors.join(', ')}`, 'error');
       return;
     }
     
-    // Add loading state with futuristic effect
+    // Se for Netlify, permite o envio nativo após validação
+    if (emailService.provider === 'netlify') {
+      showNotification('Message transmitted successfully! 🚀', 'success');
+      // Permite que o formulário seja submetido nativamente
+      return;
+    }
+    
+    // Para outros provedores, previne o comportamento padrão
+    e.preventDefault();
+    
+    // Estado de loading
     const submitButton = form.querySelector('button[type="submit"]');
     const originalText = submitButton.textContent;
     submitButton.textContent = 'TRANSMITTING...';
@@ -324,22 +341,19 @@ function initContactForm() {
     submitButton.classList.add('loading');
     
     try {
+      // Envia usando o serviço apropriado
       const result = await emailService.sendEmail(data);
       
       if (result.success) {
         showNotification('Message transmitted successfully! 🚀', 'success');
         form.reset();
-        
-        // Clear all skill bars for reset animation
-        const skillBars = document.querySelectorAll('.skill-progress');
-        skillBars.forEach(bar => bar.style.width = '0%');
       } else {
-        throw new Error(result.error || 'Erro desconhecido');
+        showNotification(result.message || 'Transmission failed. Please try again. ⚠️', 'error');
       }
       
     } catch (error) {
-      console.error('Erro ao enviar mensagem:', error);
-      showNotification(`Transmission failed: ${error.message} ⚠️`, 'error');
+      console.error('Erro no envio:', error);
+      showNotification('Transmission failed. Please try again. ⚠️', 'error');
     } finally {
       submitButton.textContent = originalText;
       submitButton.disabled = false;
@@ -431,6 +445,7 @@ function clearFieldError(e) {
     errorMessage.remove();
   }
 }
+
 
 // Enhanced notification system
 function showNotification(message, type = 'info') {
